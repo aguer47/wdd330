@@ -21,9 +21,14 @@ export default class ProductDetails {
 
   addProductToCart() {
     // Move this function from product.js. Make any changes necessary to make it work.
-    let cart = getLocalStorage("so-cart") || [];
+    let cart = getLocalStorage("so-cart");
+    // Ensure cart is always an array
+    if (!Array.isArray(cart)) {
+      cart = [];
+    }
     cart.push(this.product);
     setLocalStorage("so-cart", cart);
+    alert("Product added to cart!");
   }
 
   renderProductDetails() {
