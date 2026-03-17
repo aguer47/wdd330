@@ -21,12 +21,12 @@ function renderCartContents() {
 function cartItemTemplate(item) {
   return `<li class="cart-card divider">
     <a href="#" class="cart-card__image">
-      <img src="${item.Image || 'default.jpg'}" alt="${item.Name || 'Product'}" />
+      <img src="${item.Image || "default.jpg"}" alt="${item.Name || "Product"}" />
     </a>
     <a href="#">
-      <h2 class="card__name">${item.Name || 'Unnamed Product'}</h2>
+      <h2 class="card__name">${item.Name || "Unnamed Product"}</h2>
     </a>
-    <p class="cart-card__color">${item.Colors?.[0]?.ColorName || 'No color'}</p>
+    <p class="cart-card__color">${item.Colors?.[0]?.ColorName || "No color"}</p>
     <p class="cart-card__quantity">qty: 1</p>
     <p class="cart-card__price">$${item.FinalPrice ?? 0}</p>
   </li>`;
