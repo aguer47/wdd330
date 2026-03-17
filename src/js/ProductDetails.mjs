@@ -17,6 +17,7 @@ export default class ProductDetails {
     document
       .getElementById('addToCart')
       .addEventListener('click', this.addProductToCart.bind(this));
+    
   }
 
   addProductToCart() {
