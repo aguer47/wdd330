@@ -8,10 +8,7 @@ export default class ProductDetails {
   }
 
   async init() {
-    // use the datasource to get the details for the current product. findProductById will return a promise! use await or .then() to process it
-    // the product details are needed before rendering the HTML
-    // once the HTML is rendered, add a listener to the Add to Cart button
-    // Notice the .bind(this). This callback will not work if the bind(this) is missing. Review the readings from this week on 'this' to understand why.
+
     this.product = await this.dataSource.findProductById(this.productId);
     this.renderProductDetails();
     document
@@ -23,7 +20,6 @@ export default class ProductDetails {
   addProductToCart() {
     // Move this function from product.js. Make any changes necessary to make it work.
     let cart = getLocalStorage("so-cart");
-    // Ensure cart is always an array
     if (!Array.isArray(cart)) {
       cart = [];
     }
